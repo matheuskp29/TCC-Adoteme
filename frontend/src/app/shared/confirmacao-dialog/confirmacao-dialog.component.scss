@@ -1,0 +1,34 @@
+p {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+  font-size: 18px;
+  font-weight: bold;
+  overflow-wrap: normal;
+  text-align: center;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  .green-button {
+    width: 120px;
+    height: 50px;
+    border: none;
+    background-color: #09d8ba;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+
+  .red-button {
+    width: 120px;
+    height: 50px;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 8px;
+  }
+}

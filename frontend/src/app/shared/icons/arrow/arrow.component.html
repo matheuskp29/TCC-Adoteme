@@ -1,0 +1,25 @@
+<svg
+  *ngIf="arrowDirection === 'down'"
+  [ngClass]="{
+    'color-yellow': color === '#f2e46a',
+    'color-white': color === 'white'
+  }"
+  xmlns="http://www.w3.org/2000/svg"
+  height="24"
+  width="24"
+>
+  <path d="m12 15.4-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4Z" />
+</svg>
+
+<svg
+  *ngIf="arrowDirection === 'up'"
+  [ngClass]="{
+    'color-yellow': color === '#f2e46a',
+    'color-white': color === 'white'
+  }"
+  xmlns="http://www.w3.org/2000/svg"
+  height="24"
+  width="24"
+>
+  <path d="M7.4 15.4 6 14l6-6 6 6-1.4 1.4-4.6-4.6Z" />
+</svg>

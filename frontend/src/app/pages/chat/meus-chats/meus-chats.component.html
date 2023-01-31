@@ -1,0 +1,22 @@
+<app-second-header></app-second-header>
+<img
+  class="placeholder"
+  *ngIf="tam === 0"
+  src="../../../../assets/chat-error.png"
+/>
+<div class="container" *ngIf="tam > 0">
+  <main class="chat-container">
+    <app-chat-resumo
+      class="d-flex justify-content-center align-content-center"
+      *ngFor="let chat of chats$ | async | slice: lowValue:highValue"
+      [chat]="chat"
+    ></app-chat-resumo>
+  </main>
+  <mat-paginator
+    [hidden]="tam === 0"
+    [length]="tam"
+    [pageSize]="4"
+    [showFirstLastButtons]="true"
+    (page)="getPaginatorData($event)"
+  ></mat-paginator>
+</div>

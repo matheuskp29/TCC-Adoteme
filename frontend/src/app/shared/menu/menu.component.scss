@@ -1,0 +1,47 @@
+.container-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .button {
+    position: relative;
+    background-color: transparent;
+    width: 129px;
+    height: 35px;
+    margin-right: 25px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .button:hover {
+    color: #f2e46a;
+    background-color: #a48cde;
+  }
+}
+
+@media screen and(max-width: 820px) {
+  .container-menu {
+    .button {
+      top: 15px;
+      width: 90px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .container-menu {
+    .button {
+      top: -12px;
+      width: 79px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+  }
+}

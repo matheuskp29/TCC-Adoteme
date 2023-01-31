@@ -1,0 +1,9 @@
+<div *ngIf="showOptions" class="option-container">
+  <div
+    class="option"
+    *ngFor="let option of options"
+    (click)="emitSelectedOption(option)"
+  >
+    {{ option.descricao }}
+  </div>
+</div>

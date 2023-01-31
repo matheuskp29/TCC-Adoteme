@@ -1,0 +1,155 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .main-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 370px;
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 370px;
+        height: 75px;
+        margin-bottom: 7px;
+
+        .label {
+          font-size: 14px;
+          white-space: nowrap;
+          color: gray;
+          margin-bottom: 5px;
+        }
+
+        .input {
+          height: 31px;
+          padding: 5px;
+          border-radius: 10px;
+          background-color: #fafafc;
+          border: solid 1px gray;
+          padding-left: 7px;
+        }
+
+        .input:hover {
+          border: 2px solid #09d8ba;
+        }
+
+        .input:focus {
+          border: 2px solid #09d8ba;
+        }
+
+        .error {
+          font-size: 12px;
+          margin: 0 0 7px 0;
+          color: #ff0000;
+        }
+
+        .invalid-field {
+          border: solid 2px red;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    h2 {
+      margin: 20px 0;
+      border-bottom: 1px gray solid;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 50px;
+    }
+
+    option {
+      font-size: 14px;
+      color: grey;
+      line-height: 50px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      .cancel {
+        height: 46px;
+        font-size: 16px;
+        border: none;
+        background-color: #ff0000;
+        border-radius: 6px;
+        width: 100px;
+        color: white;
+        font-weight: 500;
+      }
+      .submit {
+        height: 46px;
+        font-size: 16px;
+        border: none;
+        background-color: #09d8ba;
+        border-radius: 6px;
+        width: 150px;
+        color: white;
+        font-weight: 500;
+      }
+    }
+
+    .password {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .senha,
+    .confirma {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+
+    .senha {
+      margin-right: 10px;
+    }
+
+    select::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    select::-webkit-scrollbar-track {
+      background: lightgray;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background-color: #8257e5;
+      border: 1px solid #8257e5;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .password {
+      flex-direction: column;
+    }
+    .main-container {
+      .senha,
+      .confirma {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+}

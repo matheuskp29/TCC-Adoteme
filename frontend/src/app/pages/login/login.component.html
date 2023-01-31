@@ -1,0 +1,32 @@
+<app-second-header></app-second-header>
+<div class="login-container">
+  <main class="main-container">
+    <div class="container1">
+      <h1 class="form-title">Login</h1>
+      <form [formGroup]="form">
+        <label class="login-label" for="email" name="email">E-mail</label>
+        <input class="login-input" type="email" formControlName="login" />
+        <label class="login-label" for="senha" name="senha">Senha</label>
+        <input
+          class="login-input last-input"
+          type="password"
+          formControlName="senha"
+          (keydown.enter)="login()"
+        />
+        <div class="border-form"></div>
+        <div class="buttons-container">
+          <button class="cancelar-button" routerLink="/anuncios">
+            Cancelar
+          </button>
+          <button
+            class="entrar-button"
+            [disabled]="form.invalid"
+            (click)="login()"
+          >
+            Entrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

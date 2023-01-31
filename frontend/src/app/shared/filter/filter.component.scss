@@ -1,0 +1,109 @@
+.filter-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+
+  .select-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 10px;
+    height: 80px;
+
+    .label {
+      white-space: nowrap;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .input {
+      height: 40px;
+      width: 150px;
+      display: flex;
+      border-radius: 10px;
+      align-items: center;
+      background-color: #fafafc;
+      border: solid 1px gray;
+    }
+  }
+
+  .favorito {
+    border: none;
+    background-color: #e5e5e5;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  .button {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 45px;
+    width: 100px;
+    background-color: #09d8ba;
+    border: none;
+    margin: 0 15px 0 0;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .filter-container {
+    .select-container {
+      .label {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .filter-container {
+    flex-flow: column;
+
+    .select-container {
+      .label {
+        font-size: 14px;
+      }
+    }
+    .filter-buttons {
+      justify-content: center;
+      margin-top: 15px;
+      margin-left: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .filter-container {
+    flex-flow: column;
+    .select-container {
+      height: 50px;
+      margin-bottom: 10px;
+      .label {
+        font-size: 12px;
+      }
+    }
+    .favorito {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .filter-buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .button {
+      height: 35px;
+      width: 100px;
+    }
+  }
+}

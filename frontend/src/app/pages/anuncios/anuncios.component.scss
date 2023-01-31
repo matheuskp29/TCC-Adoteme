@@ -1,0 +1,64 @@
+.placeholder {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.main-container {
+  margin: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .anuncio {
+    margin: 20px;
+  }
+}
+
+mat-paginator {
+  background-color: transparent;
+  font-size: 14px;
+}
+
+@media screen and(max-width: 1920px) {
+  mat-paginator {
+    font-size: 20px;
+    ::ng-deep.mat-select-value {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and(max-width: 820px) {
+  mat-paginator {
+    font-size: 16px;
+    ::ng-deep.mat-select-value {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .anuncio-container {
+    flex-flow: column;
+
+    .main-container {
+      justify-content: center;
+    }
+  }
+
+  mat-paginator {
+    font-size: 12px;
+    ::ng-deep.mat-select-value {
+      font-size: 12px;
+    }
+
+    ::ng-deep.mat-paginator-container {
+      justify-content: center;
+    }
+
+    ::ng-deep.mat-paginator-range-label {
+      margin: 0 15px 0 0;
+    }
+  }
+}

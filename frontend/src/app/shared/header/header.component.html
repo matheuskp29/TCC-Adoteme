@@ -1,0 +1,12 @@
+<div class="container-header">
+  <a routerLink="/anuncios" class="link"
+    ><img src="../../../assets/logo.png" alt="Logo adoteme" class="logo"
+  /></a>
+  <app-menu></app-menu>
+  <div class="user-container" *ngIf="nome !== ''">
+    <a class="user-name" routerLink="/perfil"
+      ><img class="cadastro" src="/assets/user_icon.svg" alt="cadastro"
+    /></a>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</div>

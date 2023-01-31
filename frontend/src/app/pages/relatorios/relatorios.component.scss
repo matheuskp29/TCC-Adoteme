@@ -1,0 +1,28 @@
+.relatorios-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .main-container {
+    margin-top: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .grafico {
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 1.5);
+    border-radius: 10px;
+    margin-left: 15px;
+  }
+
+  @media screen and (max-width: 620px) {
+    .grafico:nth-child(2) {
+      margin-top: 25px;
+    }
+
+  }
+}

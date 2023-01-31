@@ -1,0 +1,224 @@
+<app-second-header></app-second-header>
+<div class="anuncios-container">
+  <main class="main-container">
+    <div class="container1">
+      <h1 class="form-title">Novo Anúncio</h1>
+      <form [formGroup]="form">
+        <div class="titulo-container">
+          <label class="label" for="titulo" name="titulo">Título</label>
+          <input
+            class="input"
+            [ngClass]="{
+              'invalid-field':
+                form.get('titulo')?.invalid &&
+                (form.get('titulo')?.dirty || form.get('titulo')?.touched)
+            }"
+            type="text"
+            formControlName="titulo"
+          />
+          <div
+            *ngIf="
+              form.get('titulo')?.invalid &&
+              (form.get('titulo')?.dirty || form.get('titulo')?.touched)
+            "
+            class="error"
+          >
+            <div
+              *ngIf="form.get('titulo')?.errors?.['minlength'] || form.get('descricao')?.errors?.['maxlength']"
+            >
+              Campo deve possuir entre 10 e 100 caracteres.
+            </div>
+            <div *ngIf="form.get('titulo')?.errors?.['required']">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+        <div class="textarea-container">
+          <label class="label" for="descricao" name="descricao"
+            >Descrição</label
+          >
+          <textarea
+            [ngClass]="{
+              'invalid-field':
+                form.get('descricao')?.invalid &&
+                (form.get('descricao')?.dirty || form.get('descricao')?.touched)
+            }"
+            class="textarea last-input"
+            type="text"
+            formControlName="descricao"
+          ></textarea>
+          <div
+            *ngIf="
+              form.get('descricao')?.invalid &&
+              (form.get('descricao')?.dirty || form.get('descricao')?.touched)
+            "
+            class="error"
+          >
+            <div
+              *ngIf="form.get('descricao')?.errors?.['minlength'] || form.get('descricao')?.errors?.['maxlength']"
+            >
+              Campo deve possuir entre 10 e 500 caracteres.
+            </div>
+            <div *ngIf="form.get('descricao')?.errors?.['required']">
+              Campo obrigatório.
+            </div>
+          </div>
+        </div>
+        <div class="third-line-container">
+          <div class="select-container">
+            <label class="label" for="tipoAnimal">Tipo de Animal</label>
+            <mat-select
+              [ngClass]="{
+                'invalid-field':
+                  form.get('tipoAnimal')?.invalid &&
+                  (form.get('tipoAnimal')?.dirty ||
+                    form.get('tipoAnimal')?.touched)
+              }"
+              class="input"
+              formControlName="tipoAnimal"
+            >
+              <mat-option
+                *ngFor="let tipoDeAnimal of tipoAnimalList$ | async"
+                [value]="tipoDeAnimal.id"
+                >{{ tipoDeAnimal.nome }}</mat-option
+              >
+            </mat-select>
+            <div
+              *ngIf="
+                form.get('tipoAnimal')?.invalid &&
+                (form.get('tipoAnimal')?.dirty ||
+                  form.get('tipoAnimal')?.touched)
+              "
+              class="error"
+            >
+              <div *ngIf="form.get('tipoAnimal')?.errors?.['min']">
+                Campo obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="select-container">
+            <label class="label" for="idadeAnimal">Idade do Animal</label>
+            <mat-select
+              [ngClass]="{
+                'invalid-field':
+                  form.get('idadeAnimal')?.invalid &&
+                  (form.get('idadeAnimal')?.dirty ||
+                    form.get('idadeAnimal')?.touched)
+              }"
+              class="input"
+              formControlName="idadeAnimal"
+            >
+              <mat-option
+                *ngFor="let idade of idadeAnimalList$ | async"
+                [value]="idade.id"
+                >{{ idade.idade }}</mat-option
+              >
+            </mat-select>
+            <div
+              *ngIf="
+                form.get('idadeAnimal')?.invalid &&
+                (form.get('idadeAnimal')?.dirty ||
+                  form.get('idadeAnimal')?.touched)
+              "
+              class="error"
+            >
+              <div *ngIf="form.get('idadeAnimal')?.errors?.['min']">
+                Campo obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="select-container">
+            <label class="label" for="porteAnimal">Porte do Animal</label>
+            <mat-select
+              [ngClass]="{
+                'invalid-field':
+                  form.get('porteAnimal')?.invalid &&
+                  (form.get('porteAnimal')?.dirty ||
+                    form.get('porteAnimal')?.touched)
+              }"
+              class="input"
+              formControlName="porteAnimal"
+            >
+              <mat-option
+                *ngFor="let porte of porteAnimalList$ | async"
+                [value]="porte.id"
+                >{{ porte.nome }}</mat-option
+              >
+            </mat-select>
+            <div
+              *ngIf="
+                form.get('porteAnimal')?.invalid &&
+                (form.get('porteAnimal')?.dirty ||
+                  form.get('porteAnimal')?.touched)
+              "
+              class="error"
+            >
+              <div *ngIf="form.get('porteAnimal')?.errors?.['min']">
+                Campo obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="select-container">
+            <label class="label" for="temperamento">Temperamento</label>
+            <mat-select
+              [ngClass]="{
+                'invalid-field':
+                  form.get('temperamento')?.invalid &&
+                  (form.get('temperamento')?.dirty ||
+                    form.get('temperamento')?.touched)
+              }"
+              class="input"
+              formControlName="temperamento"
+            >
+              <mat-option
+                *ngFor="let temperamento of temperamentoList$ | async"
+                [value]="temperamento.id"
+                >{{ temperamento.nome }}</mat-option
+              >
+            </mat-select>
+            <div
+              *ngIf="
+                form.get('temperamento')?.invalid &&
+                (form.get('temperamento')?.dirty ||
+                  form.get('temperamento')?.touched)
+              "
+              class="error"
+            >
+              <div *ngIf="form.get('temperamento')?.errors?.['min']">
+                Campo obrigatório.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="anexo-container">
+          <label class="anexo-label" for="file-input">
+            <input
+              name="file-input"
+              class="file-input"
+              type="file"
+              (change)="uploadFile($event)"
+            />
+            <span class="photo-button">+ Adicionar foto</span>
+          </label>
+          <div class="arquivo-anexo" *ngIf="file[0]">
+            <div class="anexo">{{ file[0].name }}</div>
+            <app-close class="close-icon" (click)="deleteFile()"></app-close>
+          </div>
+        </div>
+        <div class="border-form"></div>
+        <div class="buttons-container">
+          <button class="cancelar-button" routerLink="/meus-anuncios">
+            Cancelar
+          </button>
+          <button
+            class="entrar-button"
+            [disabled]="form.invalid"
+            (click)="cadastrarAnuncio()"
+          >
+            {{ tituloBotaoVerde }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,141 @@
+.container-header {
+  width: 100%;
+  height: 750px;
+  background-size: cover;
+  background-image: url("../../../assets/adoteme_header.png");
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  padding: 15px 15px 0 15px;
+  background-position: center;
+  margin-bottom: 30px;
+
+  .link {
+    position: relative;
+    top: 10px;
+    height: 0;
+  }
+
+  .header {
+    font-size: 70px;
+    color: #fff;
+    line-height: 76px;
+    margin: 10px;
+  }
+
+  .cadastro {
+    color: white;
+    width: 70px;
+    height: 70px;
+  }
+
+  .user-name {
+    color: white;
+  }
+
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .logout-button {
+    background-color: transparent;
+    color: #fff;
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .logout-button:hover {
+    color: #f2e46a;
+    background-color: #a48cde;
+  }
+}
+
+@media screen and(max-width: 1920px) {
+  .user-container {
+    position: relative;
+    right: 60px;
+    top: 5px;
+  }
+}
+
+@media screen and(max-width: 820px) {
+  .container-header {
+    width: 100%;
+    height: 317px;
+    background-size: 100% auto;
+
+    .user-container {
+      font-size: 12px;
+      position: relative;
+      right: -20px;
+      top: 5px;
+
+      .cadastro {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        left: 5px;
+      }
+
+      .logout-button {
+        margin: 0;
+        height: 25px;
+        width: 40px;
+      }
+    }
+    .logo {
+      position: relative;
+      top: -8px;
+      width: 145px;
+      height: 60px;
+    }
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .container-header {
+    width: 100%;
+    height: 165px;
+    background-size: 100% auto;
+
+    .user-container {
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin-left: 15px;
+      width: 20px;
+      right: 15px;
+      top: -15px;
+
+      .cadastro {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        left: 5px;
+      }
+    }
+
+    .logout-button {
+      margin: 0;
+      height: 20px;
+      width: 60px;
+    }
+
+    .logo {
+      position: relative;
+      top: -28px;
+      width: 105px;
+      height: 45px;
+    }
+  }
+}

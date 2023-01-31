@@ -1,0 +1,16 @@
+<nav class="container-menu">
+  <app-generic-dropdown-button [hidden]="role === 'ROLE_ADMIN'"
+    [title]="'Anúncios'"
+    [options]="anunciosOptions"
+    (selectedOption)="getSelectedOption($event)"
+  ></app-generic-dropdown-button>
+  <a *ngIf="role === 'ROLE_CLIENTE'" routerLink="/meus-chats">
+    <button class="button">Chats</button>
+  </a>
+  <a *ngIf="!role" routerLink="/cadastro">
+    <button class="button">Cadastre-se</button>
+  </a>
+  <a *ngIf="!role" routerLink="/login">
+    <button class="button">Login</button>
+  </a>
+</nav>

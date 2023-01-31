@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container anuncio-container">
+  <app-filter class="filter"></app-filter>
+  <img
+    [hidden]="tam > 0"
+    src="../../../assets/no-results.png"
+    class="placeholder"
+  />
+  <main [hidden]="tam === 0" class="main-container">
+    <app-anuncio
+      class="col-md-6 col-lg-4"
+      *ngFor="let anuncio of anuncios$ | async | slice: lowValue:highValue"
+      [anuncio]="anuncio"
+    ></app-anuncio>
+  </main>
+  <mat-paginator
+    [hidden]="tam === 0"
+    [length]="tam"
+    [pageSize]="6"
+    [pageSizeOptions]="[6, 9, 18, 24]"
+    [showFirstLastButtons]="true"
+    (page)="getPaginatorData($event)"
+  >
+  </mat-paginator>
+</div>

@@ -1,0 +1,29 @@
+<app-second-header></app-second-header>
+<div class="anuncios-container">
+  <main class="main-container">
+    <h1 class="titulo ">{{ selectedChat?.tituloAnuncio }}</h1>
+    <div class="d-flex justify-content-center">
+      <h2 class="sub-titulo align-self-start">Dono do anúncio: {{ selectedChat?.nomeClienteAnuncio }}</h2>
+      <h2 class="sub-titulo align-self-end">Interessado em adotar: {{selectedChat?.nomeClienteInteressado}}</h2>
+    </div>
+    <h2 *ngIf="!selectedChat?.status && selectedChat?.status !== undefined" class="sub-titulo d-flex justify-content-center text-decoration-underline">Chat finalizado</h2>
+    <div class="chat-container">
+      <div class="mensagens-container">
+        <app-mensagem
+          *ngFor="let mensagem of mensagens$ | async"
+          class="mensagem"
+          [ngClass]="mensagem.ladoDireito ? 'right' : 'left'"
+          [cor]="mensagem.ladoDireito ? 'green' : 'purple'"
+          [texto]="mensagem.descricao"
+        ></app-mensagem>
+      </div>
+      <form [formGroup]="form" class="enviar-container">
+        <input formControlName="mensagem" [readonly]="!selectedChat?.status && selectedChat?.status !== undefined" class="mensagem-input" type="text" maxlength="500" />
+        <button class="button-enviar" [disabled]="form.invalid || !selectedChat?.status && selectedChat?.status !== undefined" (click)="enviarMensagem()">Enviar</button>
+      </form>
+    </div>
+    <div class="btn-finalizar">
+      <button type="submit" [hidden]="!selectedChat?.status || selectedChat?.status === undefined" class="btn btn-primary btn-submit btn-danger" (click)="finalizarChat()">Finalizar chat</button>
+    </div>
+  </main>
+</div>

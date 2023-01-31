@@ -1,0 +1,45 @@
+.option-container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  left: 0px;
+  bottom: -70px;
+  background-color: #a48cde;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  .option {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    width: 150px;
+    height: 35px;
+  }
+
+  .option:hover {
+    color: #f2e46a;
+    cursor: pointer;
+  }
+}
+
+@media screen and(max-width: 820px) {
+  .option-container {
+    .option {
+      width: 130px;
+    }
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .option-container {
+    .option {
+      width: 90px;
+    }
+  }
+}

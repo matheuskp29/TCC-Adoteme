@@ -1,0 +1,95 @@
+.anuncio-container {
+  background-color: white;
+  display: flex;
+  margin: 10px;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+
+  .anuncio-imagem {
+    position: static;
+    margin-right: 30px;
+    width: 200px;
+    height: 145px;
+  }
+
+  .textos-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    h1 {
+      margin-top: 15px;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    span {
+      font-size: 15px;
+    }
+  }
+}
+
+.anuncio-container:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.text {
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+@media screen and (max-width: 1920px) {
+  .anuncio-container {
+    .anuncio-imagem {
+      height: 210px;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .anuncio-container {
+    width: 320px;
+
+    .anuncio-imagem {
+      height: 180px;
+    }
+
+    h1 {
+      font-size: 20px;
+      line-height: normal;
+    }
+    .text {
+      line-height: normal;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .anuncio-container {
+    width: 240px;
+    margin-bottom: 15px;
+    height: 370px;
+
+    h1 {
+      font-size: 18px;
+      line-height: normal;
+    }
+    .anuncio-imagem {
+      height: 150px;
+    }
+    .text {
+      line-height: normal;
+      font-size: 12px;
+    }
+  }
+}

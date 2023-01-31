@@ -1,0 +1,27 @@
+<div class="card anuncio-container">
+  <img
+    class="anuncio-imagem"
+    [src]="'data:image/png;base64,' + chat?.fotoAnuncio"
+    alt="Foto do anúncio"
+  />
+  <div class="card-body">
+    <h1 class="textos-container">{{ chat?.tituloAnuncio }}</h1>
+    <h2 class="text">{{ chat?.nomeClienteAnuncio }}</h2>
+    <div class="button">
+      <button
+        class="btn btn-primary"
+        style="
+          background-color: #09d8ba;
+          height: 45px;
+          border: none;
+          width: 100px;
+          font-weight: 500;
+          font-size: 18px;
+        "
+        (click)="selecionarChat()"
+      >
+        Chat
+      </button>
+    </div>
+  </div>
+</div>

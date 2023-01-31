@@ -1,0 +1,16 @@
+.footer-image {
+  margin-top: 50px;
+  width: 100%;
+}
+
+@media screen and(max-width: 820px) {
+  .footer-image {
+    height: 250px;
+  }
+}
+
+@media screen and(max-width: 420px) {
+  .footer-image {
+    height: 115px;
+  }
+}

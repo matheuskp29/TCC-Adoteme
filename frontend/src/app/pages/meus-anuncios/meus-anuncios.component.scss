@@ -1,0 +1,39 @@
+.main-container {
+  margin: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  margin-top: 40px;
+  width: 84%;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+
+  .novo-anuncio-button {
+    width: 120px;
+    height: 50px;
+    border: none;
+    background-color: #09d8ba;
+    color: white;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 420px) {
+  .anuncios-container {
+    max-height: 100%;
+  }
+  .main-container {
+    margin: 0;
+  }
+}
+

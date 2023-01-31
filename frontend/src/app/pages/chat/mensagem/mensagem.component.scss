@@ -1,0 +1,17 @@
+.mensagem {
+  display: flex;
+  font-weight: bold;
+  padding: 10px;
+  border: solid #8257E5 1px;
+  border-radius: 8px;
+  max-width: 300px;
+  flex-wrap: wrap;
+
+  &.purple {
+    border: solid #8257E5 1px;
+  }
+
+  &.green {
+    border: solid #04D361 1px;
+  }
+}

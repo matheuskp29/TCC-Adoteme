@@ -1,0 +1,15 @@
+<app-second-header></app-second-header>
+<div class="button-container">
+  <button class="novo-anuncio-button" routerLink="/meus-anuncios/cadastro">
+    + Anúncio
+  </button>
+</div>
+<div class="container">
+  <main class="main-container">
+    <app-anuncio
+      class="col-md-4 anuncio-container"
+      *ngFor="let anuncio of anuncios$ | async"
+      [anuncio]="anuncio"
+    ></app-anuncio>
+  </main>
+</div>

@@ -1,0 +1,14 @@
+<div class="container-header">
+  <a routerLink="/anuncios"
+    ><img src="../../../assets/logo.png" alt="Logo adoteme" class="logo"
+  /></a>
+  <app-menu></app-menu>
+  <div class="user-container" *ngIf="nome != ''">
+    <a class="user-name" routerLink="/perfil" [hidden]="role === 'ROLE_ADMIN'">
+      <img class="cadastro" src="/assets/user_icon.svg" [hidden]="role === 'ROLE_ADMIN'" alt="cadastro" />
+    </a>
+    <button *ngIf="nome" class="logout-button" (click)="logout()">
+      <strong>Logout</strong>
+    </button>
+  </div>
+</div>

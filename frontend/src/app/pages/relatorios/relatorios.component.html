@@ -1,0 +1,32 @@
+<app-second-header></app-second-header>
+<div class="relatorios-container">
+  <main class="main-container">
+    <div class="d-flex justify-content-evenly flex-wrap">
+      <apx-chart class="grafico"
+        [series]="chartDonutClientes.series"
+        [chart]="chartDonutClientes.chart"
+        [title]="chartDonutClientes.title"
+        [labels]="chartDonutClientes.labels"
+        [responsive]="chartDonutClientes.responsive">
+      </apx-chart>
+      <apx-chart class="grafico"
+        [series]="chartPieAnuncios.series"
+        [chart]="chartPieAnuncios.chart"
+        [title]="chartPieAnuncios.title"
+        [labels]="chartPieAnuncios.labels"
+        [responsive]="chartPieAnuncios.responsive">
+      </apx-chart>
+    </div>
+    <apx-chart class="mt-4 grafico"
+      [series]="chartBarAnuncios.series"
+      [chart]="chartBarAnuncios.chart"
+      [title]="chartBarAnuncios.title"
+      [labels]="chartBarAnuncios.labels"
+      [xaxis]="chartBarAnuncios.xaxis"
+      [responsive]="chartBarAnuncios.responsive"
+      [dataLabels]="chartBarAnuncios.dataLabels"
+      [plotOptions]="chartBarAnuncios.plotOptions"
+    >
+    </apx-chart>
+  </main>
+</div>

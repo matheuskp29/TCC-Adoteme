@@ -1,0 +1,69 @@
+<form [formGroup]="form" class="col-xs-12">
+  <div class="filter-container">
+    <div class="select-container col-xs-12">
+      <label class="label" for="tipoAnimal">Tipo de Animal</label>
+      <mat-select class="input p-1" formControlName="tipoAnimal">
+        <mat-option
+          *ngFor="let tipoDeAnimal of tipoAnimalList$ | async"
+          [value]="tipoDeAnimal.id"
+          >{{ tipoDeAnimal.nome }}</mat-option
+        >
+      </mat-select>
+    </div>
+
+    <div class="select-container col-xs-12">
+      <label class="label" for="idadeAnimal">Idade do Animal</label>
+      <mat-select class="input p-1" formControlName="idadeAnimal">
+        <mat-option
+          *ngFor="let idade of idadeAnimalList$ | async"
+          [value]="idade.id"
+          >{{ idade.idade }}</mat-option
+        >
+      </mat-select>
+    </div>
+
+    <div class="select-container col-xs-12">
+      <label class="label" for="porteAnimal">Porte do Animal</label>
+      <mat-select class="input p-1" formControlName="porteAnimal">
+        <mat-option
+          *ngFor="let porte of porteAnimalList$ | async"
+          [value]="porte.id"
+          >{{ porte.nome }}</mat-option
+        >
+      </mat-select>
+    </div>
+
+    <div class="select-container col-xs-12">
+      <label class="label" for="temperamento">Temperamento</label>
+      <mat-select class="input p-1" formControlName="temperamento">
+        <mat-option
+          *ngFor="let temperamento of temperamentoList$ | async"
+          [value]="temperamento.id"
+          >{{ temperamento.nome }}</mat-option
+        >
+      </mat-select>
+    </div>
+
+    <div class="select-container col-xs-12">
+      <label class="label" for="estado">Estado</label>
+      <mat-select class="input p-1" formControlName="estado">
+        <mat-option
+          *ngFor="let estado of estados$ | async"
+          [value]="estado.id"
+          >{{ estado.nome }}</mat-option
+        >
+      </mat-select>
+    </div>
+    <button class="favorito">
+      <app-heart
+        class="align-self-flex-end"
+        [selected]="filtroFavoritado"
+        (click)="favoritar()"
+      ></app-heart>
+    </button>
+    <div class="filter-buttons">
+      <button (click)="getAnunciosFiltrados()" class="button">Filtrar</button>
+      <button (click)="limparFiltros()" class="button">Limpar</button>
+    </div>
+  </div>
+</form>

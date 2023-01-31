@@ -1,0 +1,14 @@
+<div
+  class="button-container"
+  (mouseover)="enableHover()"
+  (mouseout)="disableHover()"
+  (click)="openCloseOptionsPanel()"
+>
+  <button class="button">{{ title }}</button>
+  <app-arrow [color]="arrowColor" [arrowDirection]="arrowDirection"></app-arrow>
+  <app-generic-options-panel
+    [showOptions]="showPanel"
+    [options]="options"
+    (optionSelected)="emitSelectedOption($event)"
+  ></app-generic-options-panel>
+</div>

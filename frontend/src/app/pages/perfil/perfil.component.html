@@ -1,0 +1,440 @@
+<app-second-header></app-second-header>
+<div class="container">
+  <main class="main-container">
+    <form [formGroup]="form">
+      <h2>Seus dados</h2>
+      <div class="form-field">
+        <label class="label">Nome (Obrigatório)</label>
+        <input
+          class="input"
+          type="text"
+          formControlName="nome"
+          [ngClass]="{
+            'invalid-field':
+              form.get('nome')?.invalid &&
+              (form.get('nome')?.dirty || form.get('nome')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('nome')?.invalid &&
+            (form.get('nome')?.dirty || form.get('nome')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('nome')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+          <div *ngIf="form.get('nome')?.errors?.['minlength']">
+            Campo deve ter pelo menos 5 caracteres.
+          </div>
+          <div *ngIf="form.get('nome')?.errors?.['maxlength']">
+            Campo deve ter no máximo 100 caracteres.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Email (Obrigatório)</label>
+        <input
+          class="input"
+          type="email"
+          formControlName="email"
+          readonly
+          [ngClass]="{
+            'invalid-field':
+              form.get('email')?.invalid &&
+              (form.get('email')?.dirty || form.get('email')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('email')?.invalid &&
+            (form.get('email')?.dirty || form.get('email')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('email')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+          <div *ngIf="form.get('email')?.errors?.['minlength']">
+            Campo deve ter pelo menos 5 caracteres.
+          </div>
+          <div *ngIf="form.get('email')?.errors?.['maxlength']">
+            Campo deve ter no máximo 100 caracteres.
+          </div>
+          <div *ngIf="form.get('email')?.errors?.['email']">
+            O Campo deve ter um formato válido.
+          </div>
+        </div>
+      </div>
+      <div class="password">
+        <div class="senha form-field">
+          <label class="label">Senha (Obrigatório)</label>
+          <input
+            class="input"
+            type="password"
+            formControlName="senha"
+            [ngClass]="{
+              'invalid-field':
+                form.get('senha')?.invalid &&
+                (form.get('senha')?.dirty || form.get('senha')?.touched)
+            }"
+          />
+          <div
+            *ngIf="
+              form.get('senha')?.invalid &&
+              (form.get('senha')?.dirty || form.get('senha')?.touched)
+            "
+            class="error"
+          >
+            <div *ngIf="form.get('senha')?.errors?.['required']">
+              Campo é obrigatório.
+            </div>
+            <div *ngIf="form.get('senha')?.errors?.['minlength']">
+              Campo deve ter pelo menos 6 caracteres.
+            </div>
+            <div *ngIf="form.get('senha')?.errors?.['maxlength']">
+              Campo deve ter no máximo 20 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="confirma form-field">
+          <label class="label">Confirmar senha (Obrigatório)</label>
+          <input
+            class="input"
+            type="password"
+            formControlName="confirmaSenha"
+            [ngClass]="{
+              'invalid-field':
+                form.get('confirmaSenha')?.invalid &&
+                (form.get('confirmaSenha')?.dirty ||
+                  form.get('confirmaSenha')?.touched)
+            }"
+          />
+          <div
+            *ngIf="
+              form.get('confirmaSenha')?.invalid &&
+              (form.get('confirmaSenha')?.dirty ||
+                form.get('confirmaSenha')?.touched)
+            "
+            class="error"
+          >
+            <div *ngIf="form.get('confirmaSenha')?.errors?.['required']">
+              Campo é obrigatório.
+            </div>
+            <div *ngIf="form.get('confirmaSenha')?.errors?.['minlength']">
+              Campo deve ter pelo menos 6 caracteres.
+            </div>
+            <div *ngIf="form.get('confirmaSenha')?.errors?.['maxlength']">
+              Campo deve ter no máximo 20 caracteres.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Telefone (Obrigatório)</label>
+        <input
+          class="input"
+          type="tel"
+          [imask]="{ mask: '(00) 00000-0000' }"
+          formControlName="telefone"
+          [ngClass]="{
+            'invalid-field':
+              form.get('telefone')?.invalid &&
+              (form.get('telefone')?.dirty || form.get('telefone')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('telefone')?.invalid &&
+            (form.get('telefone')?.dirty || form.get('telefone')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('telefone')?.errors?.['required']">
+            Telefone é obrigatório.
+          </div>
+          <div *ngIf="form.get('telefone')?.errors?.['minLength']">
+            Campo deve ter no mínimo 15 caracteres
+          </div>
+          <div *ngIf="form.get('telefone')?.errors?.['maxLength']">
+            Campo deve ter no máximo 15 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">CPF (Obrigatório)</label>
+        <input
+          class="input"
+          [imask]="{ mask: '000.000.000-00' }"
+          type="text"
+          formControlName="documento"
+          readonly
+          [ngClass]="{
+            'invalid-field':
+              form.get('documento')?.invalid &&
+              (form.get('documento')?.dirty || form.get('documento')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('documento')?.invalid &&
+            (form.get('documento')?.dirty || form.get('documento')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('documento')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+          <div *ngIf="form.get('documento')?.errors?.['pattern']">
+            Campo deve ter um formato válido
+          </div>
+        </div>
+      </div>
+
+      <h2>Endereço</h2>
+      <div class="form-field">
+        <label class="label">Logradouro (Obrigatório)</label>
+        <input
+          class="input"
+          type="text"
+          required
+          formControlName="logradouro"
+          [ngClass]="{
+            'invalid-field':
+              form.get('logradouro')?.invalid &&
+              (form.get('logradouro')?.dirty || form.get('logradouro')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('logradouro')?.invalid &&
+            (form.get('logradouro')?.dirty || form.get('logradouro')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('logradouro')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Bairro (Obrigatório)</label>
+        <input
+          class="input"
+          type="text"
+          formControlName="bairro"
+          [ngClass]="{
+            'invalid-field':
+              form.get('bairro')?.invalid &&
+              (form.get('bairro')?.dirty || form.get('bairro')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('bairro')?.invalid &&
+            (form.get('bairro')?.dirty || form.get('bairro')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('bairro')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+          <div *ngIf="form.get('bairro')?.errors?.['minlength']">
+            Campo deve ter pelo menos 3 caracteres.
+          </div>
+          <div *ngIf="form.get('bairro')?.errors?.['maxlength']">
+            Campo deve ter no máximo 100 caracteres.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Complemento</label>
+        <input
+          class="input"
+          type="text"
+          formControlName="complemento"
+          [ngClass]="{
+            'invalid-field':
+              form.get('complemento')?.invalid &&
+              (form.get('complemento')?.dirty ||
+                form.get('complemento')?.touched)
+          }"
+        />
+      </div>
+      <div class="form-field">
+        <label class="label">CEP (Obrigatório)</label>
+        <input
+          class="input"
+          type="text"
+          [imask]="{ mask: '00000-000' }"
+          formControlName="cep"
+          [ngClass]="{
+            'invalid-field':
+              form.get('cep')?.invalid &&
+              (form.get('cep')?.dirty || form.get('cep')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('cep')?.invalid &&
+            (form.get('cep')?.dirty || form.get('cep')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('cep')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+          <div *ngIf="form.get('cep')?.errors?.['pattern']">
+            Campo deve ter um formato válido
+          </div>
+          <div *ngIf="form.get('cep')?.errors?.['minlength']">
+            Campo deve ter pelo menos 9 caracteres.
+          </div>
+          <div *ngIf="form.get('cep')?.errors?.['maxlength']">
+            Campo deve ter no máximo 9 caracteres.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Estado (Obrigatório)</label>
+        <mat-select
+          class="input"
+          type="select"
+          formControlName="estado"
+          [ngClass]="{
+            'invalid-field':
+              form.get('estado')?.invalid &&
+              (form.get('estado')?.dirty || form.get('estado')?.touched)
+          }"
+        >
+          <mat-option
+            *ngFor="let estado of estados$ | async"
+            [value]="estado.id"
+          >
+            {{ estado.nome }}
+          </mat-option>
+        </mat-select>
+        <div
+          *ngIf="
+            form.get('estado')?.invalid &&
+            (form.get('estado')?.dirty || form.get('estado')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('estado')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="label">Cidade (Obrigatório)</label>
+        <input
+          class="input"
+          type="text"
+          formControlName="cidade"
+          [ngClass]="{
+            'invalid-field':
+              form.get('cidade')?.invalid &&
+              (form.get('cidade')?.dirty || form.get('cidade')?.touched)
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('cidade')?.invalid &&
+            (form.get('cidade')?.dirty || form.get('cidade')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="form.get('cidade')?.errors?.['required']">
+            Campo é obrigatório.
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button
+          type="button"
+          class="cancel"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          (click)="openFormModal()"
+        >
+          Deletar conta
+        </button>
+        <button
+          class="submit"
+          [disabled]="
+            form.invalid &&
+            form.get('senha')?.value !== form.get('confirmaSenha')?.value || form.get('senha')?.value === ''
+            || form.get('confirmaSenha')?.value === ''
+          "
+          (click)="alterarConta()"
+        >
+          Salvar
+        </button>
+      </div>
+
+      <div
+        class="modal fade"
+        data-bs-backdrop="static"
+        id="myModal"
+        #myModal
+        tabindex="-1"
+        aria-labelledby="Modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel">
+                Deleção de conta
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Deseja realmente cancelar a sua conta?
+              <div class="mb-3">
+                <label for="senhaDeletarConta" class="col-form-label"
+                  >Informe a senha:</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senhaDeletarConta"
+                  formControlName="senhaDeletar"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="closeFormModal()"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                style="
+                    background-color: #09d8ba;
+                    border: none;
+                "
+                data-bs-dismiss="modal"
+                (click)="deletarConta()"
+              >
+                Sim
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+</div>

@@ -1,0 +1,54 @@
+<app-second-header></app-second-header>
+<div class="d-flex justify-content-center align-items-center">
+  <article class="postcard light green align-self-center mt-5">
+    <img
+      class="postcard__img"
+      [src]="'data:image/png;base64,' + anuncio?.foto"
+      alt="Foto do anúncio"
+    />
+    <div class="postcard__text t-dark">
+      <div class="d-flex justify-content-between" (click)="favoritarAnuncio()">
+        <h1 class="postcard__title green">{{anuncio?.tituloAnuncio}}</h1>
+        <app-heart class="float-left" *ngIf="anuncio?.clienteId !== cliente?.codigo" [selected]="anuncioFavoritado"></app-heart>
+      </div>
+      <div class="postcard__subtitle">
+        <p class="text">{{anuncio?.tipoAnimal}}</p>
+      </div>
+      <div class="postcard__bar"></div>
+      <div class="postcard__preview-txt d-flex justify-content-center align-items-center">{{anuncio?.descricao}}
+      </div>
+      <ul class="postcard__tagbox">
+        <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{anuncio?.idade}}</li>
+        <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{anuncio?.temperamentoNome}}</li>
+        <li class="tag__item"><i class="fas fa-clock mr-2"></i>Porte {{anuncio?.porteNome}}</li>
+      </ul>
+      <div>
+        <p class="mt-2">Contato: {{anuncio?.clienteNome}}</p>
+        <p [imask]="{ mask: '(00) 00000-0000' }">Telefone: {{anuncio?.clienteTelefone}}</p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <button
+          class="green-button"
+          *ngIf="!anuncio?.meuAnuncio"
+          (click)="openChat()"
+        >
+          Chat
+        </button>
+        <button
+          class="green-button"
+          *ngIf="anuncio?.meuAnuncio"
+          (click)="alterarAnuncio()"
+        >
+          Alterar
+        </button>
+        <button
+          class="red-button"
+          *ngIf="anuncio?.meuAnuncio"
+          (click)="openDialog()"
+        >
+          Excluir
+        </button>
+      </div>
+    </div>
+  </article>
+</div>

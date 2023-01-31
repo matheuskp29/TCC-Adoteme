@@ -1,0 +1,39 @@
+<div class="card anuncio-container" style="border-radius: 10px">
+  <img
+    class="anuncio-imagem"
+    style="width: 100%; border-radius: 10px 10px 0 0"
+    [src]="'data:image/png;base64,' + anuncio.foto"
+    alt="Foto do anúncio"
+  />
+  <div class="card-body" style="width: 100%">
+    <div class="d-flex justify-content-between">
+      <h1 class="title">{{ anuncio.titulo }}</h1>
+      <app-heart
+        [hidden]="
+          !cliente.email || anuncio.codigoDonoAnuncio === cliente?.codigo
+        "
+        [selected]="anuncioFavoritado"
+        (click)="favoritarAnuncio($event)"
+      ></app-heart>
+    </div>
+    <p class="text">Tipo: {{ anuncio.tipoAnimal }}</p>
+    <p class="text">Idade: {{ anuncio.idade }}</p>
+    <p class="text">Porte: {{ anuncio.porte }}</p>
+    <p class="text">Temperamento: {{ anuncio.temperamento }}</p>
+
+    <button
+      (click)="selecionarAnuncio()"
+      style="
+        background-color: #09d8ba;
+        height: 45px;
+        border: none;
+        font-weight: 500;
+        font-size: 18px;
+      "
+      type="button"
+      class="btn btn-primary"
+    >
+      Ver mais
+    </button>
+  </div>
+</div>
