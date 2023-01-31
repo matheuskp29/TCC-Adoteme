@@ -1,0 +1,3 @@
+2022-05-05 19:33:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+insert into produto (codigo, categoria, destaque, qtde, titulo, valor) values (default, ?, ?, ?, ?, ?) [42102-200]
